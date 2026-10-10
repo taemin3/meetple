@@ -11,7 +11,7 @@ Meetple은 모바일 앱, API 서버, AI 서비스, 관리자 콘솔을 각각 �
 | --- | --- | --- | --- |
 | Mobile App | 모임 탐색·생성·참여, 실시간 채팅, 푸시 알림 | Flutter, Dart, STOMP, Firebase Messaging, Naver Map | [meetple-app](https://github.com/taemin3/meetple-app) |
 | Backend | 인증, 모임·채팅·신고 API, 실시간 메시징, 데이터 및 배포 인프라 | Java 21, Spring Boot, PostgreSQL/PostGIS, Redis, Kafka, WebSocket, AWS, Terraform | [meetple-backend](https://github.com/taemin3/meetple-backend) |
-| AI | 운영 정책 기반 신고 분석 | Python, FastAPI, LangGraph, OpenAI API, MCP | [meetple-ai](https://github.com/taemin3/meetple-ai) |
+| AI | 운영 정책 기반 신고 분석 | Python, FastAPI, LangGraph, OpenAI API, Kafka | [meetple-ai](https://github.com/taemin3/meetple-ai) |
 | Admin | 신고 검토, 제재 승인, 운영 정책 버전 관리 | React, TypeScript, Vite, MUI, TanStack Query | [meetple-admin](https://github.com/taemin3/meetple-admin) |
 
 ## 주요 기능
