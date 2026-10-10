@@ -11,7 +11,7 @@ Meetple은 모바일 앱, API 서버, AI 서비스, 관리자 콘솔을 각각 �
 | --- | --- | --- | --- |
 | Mobile App | 모임 탐색·생성·참여, 실시간 채팅, 푸시 알림 | Flutter, Dart, STOMP, Firebase Messaging, Naver Map | [meetple-app](https://github.com/taemin3/meetple-app) |
 | Backend | 인증, 모임·채팅·신고 API, 실시간 메시징, 데이터 및 배포 인프라 | Java 21, Spring Boot, PostgreSQL/PostGIS, Redis, Kafka, WebSocket, AWS, Terraform | [meetple-backend](https://github.com/taemin3/meetple-backend) |
-| AI | 자연어 모임 검색, 운영 정책 기반 신고 분석 | Python, FastAPI, LangGraph, OpenAI API, MCP | [meetple-ai](https://github.com/taemin3/meetple-ai) |
+| AI | 운영 정책 기반 신고 분석 | Python, FastAPI, LangGraph, OpenAI API, MCP | [meetple-ai](https://github.com/taemin3/meetple-ai) |
 | Admin | 신고 검토, 제재 승인, 운영 정책 버전 관리 | React, TypeScript, Vite, MUI, TanStack Query | [meetple-admin](https://github.com/taemin3/meetple-admin) |
 
 ## 주요 기능
@@ -20,7 +20,6 @@ Meetple은 모바일 앱, API 서버, AI 서비스, 관리자 콘솔을 각각 �
 - 모임 생성, 참여 신청, 승인·거절·취소 흐름
 - STOMP WebSocket 기반 실시간 채팅과 재연결 후 메시지 복구
 - 모임 이미지 업로드와 Firebase 푸시 알림
-- 자연어 조건을 이용한 AI 모임 검색
 - 신고 분석, 관리자 검토·제재 승인, 운영 정책 버전 관리
 
 ## 서비스 구성
@@ -36,8 +35,8 @@ flowchart LR
     API --> STORAGE[S3 / CloudFront]
     API --> PUSH[Firebase Cloud Messaging]
 
-    API -->|내부 요청| AI[FastAPI AI Service]
-    AI -->|MCP 검색| API
+    API -->|신고 분석 요청| AI[FastAPI AI Service]
+    AI -->|운영 정책 조회| API
     AI --> OPENAI[OpenAI API]
 ```
 
